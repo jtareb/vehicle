@@ -6,9 +6,10 @@
     URL: 'https://api.parse.com/1/',
     CONFIG: {
       headers: {
-          'X-Parse-Application-Id': '10ckZQEW1imr4NvU2kYx1KVBEY5noLXqAuwwnwYH',
-          'X-Parse-REST-API-Key': 'U6SW6exe2cupuDXXFauD8IuYeqDE18oUJFjdheJk',
-          'Content-Type': 'application/json'
+      'X-Parse-Application-Id': '10ckZQEW1imr4NvU2kYx1KVBEY5noLXqAuwwnwYH',
+      'X-Parse-REST-API-Key': 'U6SW6exe2cupuDXXFauD8IuYeqDE18oUJFjdheJk',
+      'Content-Type': 'application/json'
+          
       }
     }
 
@@ -29,3 +30,4 @@
   }])
 
 }());
+

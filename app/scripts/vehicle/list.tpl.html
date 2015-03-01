@@ -1,9 +1,9 @@
 <ul>
-	<li ng-repeat="vehicle in allVehicles" ng-click="toggleActive(vehicle)" ng-class="{active:vehicle.active}">
-		{{vehicle.name}}<span>{{vehicle.price | currency}}</span> - {{vehicle.desc}}
+	<li ng-repeat="vehicle in allVehicles">
+		{{vehicle.name}} - {{vehicle.desc}}
 	</li>
 </ul>
 
-<div class="total">
+<!--<div class="total">
 	Total: <span>{{total() | currency}}</span>
 </div>
