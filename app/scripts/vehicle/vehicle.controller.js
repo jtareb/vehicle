@@ -14,18 +14,17 @@
         });
       }
 
-      $scope.addVehicle = function (w) {
-        VehicleFactory.add(w);
+      $scope.addVehicle = function (v) {
+        VehicleFactory.add(v);
       }
 
       $rootScope.$on('vehicle:added', function (event) {
-        // handle event only if it was not defaultPrevented
+      
         if(event.defaultPrevented) {
           return;
         }
-        // mark event as "not handle in children scopes"
+       
         event.preventDefault();
-        console.log('yo yo');
         $location.path('/');
       });
 
