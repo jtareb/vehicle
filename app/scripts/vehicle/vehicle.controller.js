@@ -1,24 +1,24 @@
 ;(function (){
   
-  angular.module('Whiskey')
+  angular.module('Vehicle')
 
-  .controller('WhiskeyController', ['$scope', '$location', 'WhiskeyFactory', '$rootScope',
+  .controller('VehicleController', ['$scope', '$location', 'VehicleFactory', '$rootScope',
     
-    function ($scope, $location, WhiskeyFactory, $rootScope) {
+    function ($scope, $location, VehicleFactory, $rootScope) {
 
       var r = $location.path();
 
       if (r === '/') {
-        WhiskeyFactory.retrieve().success( function (data) {
-          $scope.allWhiskey = data.results;
+        VehicleFactory.retrieve().success( function (data) {
+          $scope.allVehicle = data.results;
         });
       }
 
-      $scope.addWhiskey = function (w) {
+      $scope.addVehicle = function (w) {
         WhiskeyFactory.add(w);
       }
 
-      $rootScope.$on('whiskey:added', function (event) {
+      $rootScope.$on('vehicle:added', function (event) {
         // handle event only if it was not defaultPrevented
         if(event.defaultPrevented) {
           return;
