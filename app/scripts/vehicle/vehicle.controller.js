@@ -28,6 +28,21 @@
         $location.path('/');
       });
 
+        $scope.total = function(){
+
+          var total = 0;
+
+    
+
+          angular.forEach($scope.vehicle, function(s){
+              if (s.active){
+              total+= s.price;
+          }
+      });
+
+          return total;
+    };
+
     }
 
   ]);
