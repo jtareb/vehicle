@@ -1,35 +1,35 @@
-;(function() {
+;(function (){
+  
+  angular.module('Vehicle')
 
-	angular.module('Vehicle')
+  .controller('VehicleController', ['$scope', '$location', 'VehicleFactory', '$rootScope',
+    
+    function ($scope, $location, VehicleFactory, $rootScope) {
 
-	.controller('VehicleController', ['$scope', '$location', 'VehicleFactory', '$rootScope',
+      var r = $location.path();
 
-		 function ($scope, $location, VehicleFactory, $rootScope) {
+      if (r === '/') {
+        VehicleFactory.retrieve().success( function (data) {
+          $scope.allVehicle = data.results;
+        });
+      }
 
-			var r = $location.path();
+      $scope.addVehicle = function (w) {
+        VehicleFactory.add(w);
+      }
 
-			if (r === '/') {
-				VehicleFactory.retrieve().success( function (data) {
-					$scope.allVehicle = data.results;
+      $rootScope.$on('vehicle:added', function (event) {
+        // handle event only if it was not defaultPrevented
+        if(event.defaultPrevented) {
+          return;
+        }
+        // mark event as "not handle in children scopes"
+        event.preventDefault();
+        $location.path('/');
+      });
 
-				});
-			}
+    }
 
-			$scope.addVehicle = function(v) {
-				VehicleFactory.add(v);
-
-			}
-
-			$rootScope.$on('vehicle:added', function(event) {
-				if(event.defaultPrevented) {
-					return;
-				}
-
-				event.preventDefault();
-				$location.path('/');
-
-			});
-		  }
-	 ]);
+  ]);
 
 }());

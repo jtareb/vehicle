@@ -1,39 +1,30 @@
-;(function () {
+;(function (){
+  
+  angular.module('Vehicle')
 
-	angular.module('Vehicle')
+  .factory('VehicleFactory', ['$http', 'PARSE', '$location', '$rootScope',
+    function ($http, PARSE, $location, $rootScope) {
 
-	.factory('VehicleFactory', ['$http', 'PARSE', '$location', '$rootScope',
+      // Getting A List of Whiskey
+      var getAllVehicles = function () {
+        return $http.get(PARSE.URL + 'classes/Vehicle', PARSE.CONFIG);
+      };
 
-		function($http, PARSE, $location, $rootScope) {
+      // Adding A Whiskey
+      var addSingleVehicle = function (obj) {
+        $http.post(PARSE.URL + 'classes/Vehicle', obj, PARSE.CONFIG)
+          .success( function () {
+            $rootScope.$broadcast('vehicle:added');
+          }
+        );
+      };
 
+      return {
+        retrieve : getAllVehicles,
+        add : addSingleVehicle
+      }
 
-			var getAllVehicles = function () {
-				return $http.get(PARSE.URL + 'classes/vehicle', PARSE.CONFIG);
-
-			};
-
-			var addSingleVehicle = function (obj) {
-				$http.post(PARSE.URL + 'classes/vehicle', obj, PARSE>CONFIG)
-				.success( function() {
-					$rootScope.$broadcast('vehicle added');
-
-				});
-			  
-			};
-
-
-			return {
-				retrieve: getAllVehicles,
-				add: addSingleVehicle
-			}
-		}
-
-	]);
+    }
+  ]);
 
 }());
-
-
-
-
-
-
