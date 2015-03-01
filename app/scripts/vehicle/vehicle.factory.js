@@ -1,27 +1,27 @@
 ;(function (){
   
-  angular.module('Vehicle')
+  angular.module('Whiskey')
 
-  .factory('VehicleFactory', ['$http', 'PARSE', '$location', '$rootScope',
+  .factory('WhiskeyFactory', ['$http', 'PARSE', '$location', '$rootScope',
     function ($http, PARSE, $location, $rootScope) {
 
       // Getting A List of Whiskey
-      var getAllVehicles = function () {
-        return $http.get(PARSE.URL + 'classes/Vehicle', PARSE.CONFIG);
+      var getAllWhiskeys = function () {
+        return $http.get(PARSE.URL + 'classes/Whiskey', PARSE.CONFIG);
       };
 
       // Adding A Whiskey
-      var addSingleVehicle = function (obj) {
-        $http.post(PARSE.URL + 'classes/Vehicle', obj, PARSE.CONFIG)
+      var addSingleWhiskey = function (obj) {
+        $http.post(PARSE.URL + 'classes/Whiskey', obj, PARSE.CONFIG)
           .success( function () {
-            $rootScope.$broadcast('vehicle:added');
+            $rootScope.$broadcast('whiskey:added');
           }
         );
       };
 
       return {
-        retrieve : getAllVehicles,
-        add : addSingleVehicle
+        retrieve : getAllWhiskeys,
+        add : addSingleWhiskey
       }
 
     }

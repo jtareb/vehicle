@@ -1,30 +1,31 @@
 ;(function (){
   
-  angular.module('Vehicle')
+  angular.module('Whiskey')
 
-  .controller('VehicleController', ['$scope', '$location', 'VehicleFactory', '$rootScope',
+  .controller('WhiskeyController', ['$scope', '$location', 'WhiskeyFactory', '$rootScope',
     
-    function ($scope, $location, VehicleFactory, $rootScope) {
+    function ($scope, $location, WhiskeyFactory, $rootScope) {
 
       var r = $location.path();
 
       if (r === '/') {
-        VehicleFactory.retrieve().success( function (data) {
-          $scope.allVehicle = data.results;
+        WhiskeyFactory.retrieve().success( function (data) {
+          $scope.allWhiskey = data.results;
         });
       }
 
-      $scope.addVehicle = function (w) {
-        VehicleFactory.add(w);
+      $scope.addWhiskey = function (w) {
+        WhiskeyFactory.add(w);
       }
 
-      $rootScope.$on('vehicle:added', function (event) {
+      $rootScope.$on('whiskey:added', function (event) {
         // handle event only if it was not defaultPrevented
         if(event.defaultPrevented) {
           return;
         }
         // mark event as "not handle in children scopes"
         event.preventDefault();
+        console.log('yo yo');
         $location.path('/');
       });
 
