@@ -20,8 +20,8 @@
       };
 
       return {
-        retrieve : getAllWhiskeys,
-        add : addSingleWhiskey
+        retrieve : getAllVehicles,
+        add : addSingleVehicle
       }
 
     }

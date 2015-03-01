@@ -15,7 +15,7 @@
       }
 
       $scope.addVehicle = function (w) {
-        WhiskeyFactory.add(w);
+        VehicleFactory.add(w);
       }
 
       $rootScope.$on('vehicle:added', function (event) {
