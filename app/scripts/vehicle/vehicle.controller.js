@@ -2,9 +2,9 @@
 
 	angular.module('Vehicle')
 
-	.controller('VehicleController', ['$scope', '$location', 'VehicleFactory', '$rootScope'
+	.controller('VehicleController', ['$scope', '$location', 'VehicleFactory', '$rootScope',
 
-		function ($scope, $location, VehicleFactory, $rootScope) {
+		 function ($scope, $location, VehicleFactory, $rootScope) {
 
 			var r = $location.path();
 

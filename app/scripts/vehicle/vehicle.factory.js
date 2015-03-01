@@ -13,7 +13,7 @@
 			};
 
 			var addSingleVehicle = function (obj) {
-				$http.post(PARSE.URL + 'classes/vehicle', obj, PARSE>CONFIG);
+				$http.post(PARSE.URL + 'classes/vehicle', obj, PARSE>CONFIG)
 				.success( function() {
 					$rootScope.$broadcast('vehicle added');
 
@@ -37,4 +37,3 @@
 
 
 
-}
