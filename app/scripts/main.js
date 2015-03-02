@@ -25,6 +25,10 @@
         templateUrl: 'scripts/vehicle/add.tpl.html',
         controller: 'VehicleController'
       })
+      .when('/add', {
+        templateUrl: 'scripts/vehicle/total.tpl.html',
+        controller: 'VehicleController'
+      })
 
   }])
 
