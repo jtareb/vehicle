@@ -13,22 +13,14 @@
 
     <script src="scripts/vendor/modernizr.js"></script>
   </head>
-  <body>
+    <body ng-app="Vehicle">
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-        <li>Sass</li>
-        <li>Modernizr</li>
-        <li>Bourbon & Neat</li>
-        <li>UnderscoreJS</li>
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
-    </div>
-
+        <div class="hero-unit">
+            <h1>Vehicle Maintenence Budget List</h1>
+              <a href="#/">List</a> | <a href="#/add">Add</a> 
+              <div class="container" ng-view></div>
+        </div>
+    
     <script src="scripts/vendor.js"></script>
 
         <script src="scripts/main.js"></script>
