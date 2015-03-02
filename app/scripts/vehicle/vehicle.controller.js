@@ -28,9 +28,9 @@
         $location.path('/');
       });
 
-        $scope.toggleActive = function(s){
-          s.active = !s.active;
-        };
+        //$scope.toggleActive = function(s){
+        //  s.active = !s.active;
+        //};
        
 
         $scope.total = function(){
@@ -41,7 +41,7 @@
 
           angular.forEach($scope.vehicle, function(s){
               if (s.active){
-              total+= s.price;
+              total += s.price;
           }
       });
 
