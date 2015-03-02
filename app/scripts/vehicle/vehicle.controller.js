@@ -28,6 +28,11 @@
         $location.path('/');
       });
 
+        $scope.toggleActive = function(s){
+          s.active = !s.active;
+        };
+       
+
         $scope.total = function(){
 
           var total = 0;

@@ -25,7 +25,7 @@
         templateUrl: 'scripts/vehicle/add.tpl.html',
         controller: 'VehicleController'
       })
-      .when('/add', {
+      .when('/total', {
         templateUrl: 'scripts/vehicle/total.tpl.html',
         controller: 'VehicleController'
       })

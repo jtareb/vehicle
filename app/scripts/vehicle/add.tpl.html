@@ -2,4 +2,7 @@
   <input ng-model="vehicle.name" type="text" placeholder="Repair Item"> <br />
   <textarea ng-model="vehicle.desc" placeholder="Repair description"></textarea><br />
   <button>Add repair item</button>
+  <div class="total">	
+	Total: <span>{{total() | currency}}</span>
+  </div>		
 </form>
