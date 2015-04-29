@@ -1,6 +1,6 @@
 ;(function (){
   
-  angular.module('Vehicle')
+  angular.module('Vehicles')
 
   .controller('VehicleController', ['$scope', '$location', 'VehicleFactory', '$rootScope',
     

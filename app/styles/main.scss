@@ -4,7 +4,7 @@
 
 // Custom Styles
 body {
-  background: hsla(181, 96%, 28%, 1.0);
+  background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
@@ -15,7 +15,7 @@ body {
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: hsla(169, 96%, 80%, 1.0);
+  background-color: #eee;
   border-radius: 6px;
   padding: 60px;
   h1 {
@@ -23,29 +23,4 @@ body {
     line-height: 1;
     letter-spacing: -1px;
   }
-
-}
-
-
-li {
-  border-style: solid;
-  background-color: white;
-  padding: 20px 30px;
-  margin-bottom: 10px;
-
-}
-li span {
-  float: right;
-}
-
-div.total{
-  border-top:1px solid black;
-  padding:15px 30px;
-  font-size:20px;
-  text-align: left;
-  color: black;
-}
-
-div.total span{
-  float:right;
 }

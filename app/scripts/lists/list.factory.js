@@ -1,6 +1,6 @@
 ;(function (){
   
-  angular.module('Vehicle')
+  angular.module('Vehicles')
 
   .factory('VehicleFactory', ['$http', 'PARSE', '$location', '$rootScope',
     function ($http, PARSE, $location, $rootScope) {
