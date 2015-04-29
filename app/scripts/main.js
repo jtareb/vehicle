@@ -32,15 +32,19 @@
 
           .when('/', {
             templateUrl: 'scripts/vehicle/list.tpl.html',
-            controller: 'VehicleController'
+            controller: 'VehicleCtrl'
           })
           .when('/add', {
-            templateUrl: 'scripts/lists/add.tpl.html',
-            controller: 'VehicleController'
+            templateUrl: 'scripts/vehicle/add.tpl.html',
+            controller: 'VehicleCtrl'
+          })
+
+          .when('/edit', {
+            templateUrl: 'scripts/vehicle/editVehicle.tpl.html',
+            controller: 'VehicleCtrl'
           })
           
-
-  }])
+        }])
 
 }());
 
