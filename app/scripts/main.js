@@ -1,6 +1,6 @@
 ;(function (){
   
-  angular.module('Banking', ['ngRoute'])
+  angular.module('Vehicle', ['ngRoute'])
 
   .constant('PARSE', {
     URL: 'https://api.parse.com/1/',
@@ -18,18 +18,6 @@
 
     $routeProvider
 
-       // Login Page
-          .when('/login', {
-            templateUrl: 'scripts/Users/user.login.tpl.html',
-            controller: 'UserCtrl'
-          })
-
-        // Register Page 
-          .when('/register', {
-            templateUrl: 'scripts/Users/user.register.tpl.html',
-            controller: 'UserCtrl'
-          })
-
           .when('/', {
             templateUrl: 'scripts/vehicle/list.tpl.html',
             controller: 'VehicleCtrl'
@@ -38,7 +26,6 @@
             templateUrl: 'scripts/vehicle/add.tpl.html',
             controller: 'VehicleCtrl'
           })
-
           .when('/edit', {
             templateUrl: 'scripts/vehicle/editVehicle.tpl.html',
             controller: 'VehicleCtrl'
