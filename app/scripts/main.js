@@ -26,10 +26,7 @@
             templateUrl: 'scripts/vehicle/add.tpl.html',
             controller: 'VehicleCtrl'
           })
-          .when('/edit', {
-            templateUrl: 'scripts/vehicle/editVehicle.tpl.html',
-            controller: 'VehicleCtrl'
-          })
+          
           
         }])
 

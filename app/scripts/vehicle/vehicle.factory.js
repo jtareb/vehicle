@@ -2,44 +2,35 @@
   
   angular.module('Vehicle')
 
-  .factory('VehicleFactory', ['$http', 'PARSE', 'UserFactory', '$rootScope',
-    function ($http, PARSE, UserFactory, $rootScope) {
+  .factory('VehicleFactory', ['$http', 'PARSE', '$location', '$rootScope',
+    function ($http, PARSE, $location, $rootScope) {
 
-      var user = UserFactory.user();
+     
 
 
       //get a list of vehicles//
-      var getAllVehicles = function () {
-        return $http.get(PARSE.URL + 'classes/Vehicle', PARSE.CONFIG);
-      };
+       var getAllShows = function(){
+          return  $http.get(PARSE.URL + 'classes/Vehicle', PARSE.CONFIG)
+            .success(function(){
+            $rootScope.$broadcast('allVehicles: list');
+          });
+        };
 
       //add vehicle//
       var addSingleVehicle = function (obj) {
         $http.post(PARSE.URL + 'classes/Vehicle', obj, PARSE.CONFIG)
           .success( function () {
             $rootScope.$broadcast('vehicle:added');
-          }
-        );
-      };
-
-      var removeVehicle = function (obj) {
-        $http.delete(PARSE.URL + 'classes/Vehicle/' + obj.objectId, PARSE.CONFIG)
-          .success( function () {
-            $rootScope.$broadcast('vehicle:removed');
-
           });
       };
 
-       var editVehicle = function (obj) {
-         return $http.get(PARSE.URL + 'classes/Vehicle' + obj.objectId, PARSE.CONFIG);
-      };
+     
       
  
       return {
-        retrieve : getAllVehicles,
-        add : addSingleVehicle,
-        remove : removeVehicle,
-        edit : editVehicle
+        get : getAllVehicles,
+        add : addSingleVehicle
+        
       }
 
     }
