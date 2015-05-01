@@ -1,14 +1,23 @@
-<ul class="vehicle information">
-	<li ng-repeat="vehicle in allVehicles">
-		<div class="infoBox">
-			<div class="vehicleName">Name: {{ vehicle.name }} </div>
-			<div class="vehicleYear">Year: {{ vehicle.year }} </div>
-			<div class="vehicleMileage">Mileage: {{ vehicle.mileage }} </div>
-			<div>{{ vehicle.desc }}</div>
-		</div>
-	</li>
-</ul>
- 
- 
+
+<div class="vinfo">
+
+	<h2>Vehicle Information</h2>
+
+	<input type="text", ng-model="searchText", placeholder="Enter search information">
+
+		
+		<ul>
+
+
+			<li  ng-repeat="vehicle in allVehicles">{{ vehicle.name }} <hr></li>
+			
+		</ul>
+
+</div>
+
+
+
+
 
  
+
