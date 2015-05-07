@@ -1,25 +1,25 @@
 (function() {
 
   angular.module('Vehicle')
-  .controller('VehicleCtrl', ['$scope', 'ShowsFactory', '$rootScope', '$cacheFactory',
+  .controller('VehicleCtrl', ['$scope', 'VehicleFactory', '$rootScope', '$cacheFactory',
 
-    function($scope, ShowsFactory, $rootScope, $cacheFactory){
+   function ($scope, VehicleFactory, $rootScope, $cacheFactory) {
 
       var cache = $cacheFactory.get('http');
 
       $scope.allVehicles = [];
 
-      ShowsFactory.get().success( function(data){
+      VehicleFactory.get().success( function(data){
           $scope.allVehicles = data.results;
         });
 
 
 
-      $scope.addVehicle = function(w){
+      $scope.addVehicle = function(v){
 
 
-        ShowsFactory.add(w);
-        console.log(w);
+        VehicleFactory.add(v);
+        console.log(v);
 
 
       };

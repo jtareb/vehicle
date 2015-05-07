@@ -28,7 +28,14 @@ body {
 .vinfo {
   color: black;
   overflow: auto;
+  border-bottom: 1px solid grey;
+
     h2 {
+      color: black;
+      border-top: 1px solid grey;
+
+    }
+    h3 {
       color: black;
     }
 
